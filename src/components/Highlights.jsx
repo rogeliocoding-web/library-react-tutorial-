@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import Highlight from "./ui/Highlight";
 
 const Highlights = () => {
   return (
@@ -10,33 +11,20 @@ const Highlights = () => {
             Why choose <span className="spanpurple">Library</span>?
           </h2>
           <div className="highlight__wrapper">
-            <div className="highlight">
-              <div className="highlight__img">
-                <FontAwesomeIcon icon="bolt" />
-              </div>
-              <h3 className="hightlight__subtitle">Easy and Quick</h3>
-              <p className="hightlight__para">
-                Get access to book you purchase online instantly.
-              </p>
-            </div>
-            <div className="highlight">
-              <div className="highlight__img">
-                <FontAwesomeIcon icon="book-open" />
-              </div>
-              <h3 className="hightlight__subtitle">10,000 + Books</h3>
-              <p className="hightlight__para">
-                Library has books in all your favorite categories.
-              </p>
-            </div>
-            <div className="highlight">
-              <div className="highlight__img">
-                <FontAwesomeIcon icon="tags" />
-              </div>
-              <h3 className="hightlight__subtitle">Affordable</h3>
-              <p className="hightlight__para">
-                Get your hands on popular books for as little as $10.
-              </p>
-            </div>
+            <Highlight 
+            icon={<FontAwesomeIcon icon="bolt" />}
+             title="Easy and Quick" 
+             para="Get access to book you purchase online instantly."
+            />
+            <Highlight icon={<FontAwesomeIcon icon="book-open" />}
+             title="Easy and Quick" 
+             para="Library has books in all your favorite categories."
+            />
+            <Highlight icon={<FontAwesomeIcon icon="tags" />}
+             title="Affordable" 
+             para="Get your hands on popular books for as little as $10."
+            />
+        
           </div>
         </div>
       </div>
@@ -44,4 +32,8 @@ const Highlights = () => {
   );
 };
 
+
 export default Highlights;
+
+
+
