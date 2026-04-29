@@ -15,10 +15,10 @@ function App() {
       <div className="App">
         <Nav />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/books" element={<Books books={books} />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/books/:id" element={<Bookinfo book={books} />} />
+          <Route path="/" exact component={Home} />
+          <Route path="/books" exact render={() => <Books books={books} />} />
+          <Route path="/books/:id" render={() => <Bookinfo books={books} />} />
+          <Route path="/cart" render={() => <Cart books={books} />} />
         </Routes>
         <Footer />
       </div>
@@ -27,5 +27,6 @@ function App() {
 }
 
 export default App;
+
 
 
