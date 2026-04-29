@@ -7,6 +7,7 @@ import Books from "./pages/Books";
 import { books } from "./data";
 import Bookinfo from "./pages/Bookinfo";
 import Cart from "./components/Cart";
+import Price from "./components/ui/Price";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/books" element={<Books books={books} />} />
+          <Route path="/book" element={<Books books={books} />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/books/1" element={<Bookinfo book={books} />} />
         </Routes>
@@ -26,4 +27,5 @@ function App() {
 }
 
 export default App;
+
 

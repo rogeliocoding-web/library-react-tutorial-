@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="row row__column">
            <Link to href="/">
               <figure className='Footer__logo'>
-                <img src={Logo} class="footer__logo--img" />
+                <img src={Logo} className="footer__logo--img" />
 
               </figure>
             </Link>
