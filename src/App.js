@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import Books from "./pages/Books";
 import { books } from "./data";
 import Bookinfo from "./pages/Bookinfo";
-import Cart from "./pages/Cart";
+import Cart from "./components/Cart";
 
 function App() {
   return (
