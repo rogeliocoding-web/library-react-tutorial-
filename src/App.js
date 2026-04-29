@@ -16,9 +16,9 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/book" element={<Books books={books} />} />
+          <Route path="/books" element={<Books books={books} />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/books/1" element={<Bookinfo book={books} />} />
+          <Route path="/books/:id" element={<Bookinfo book={books} />} />
         </Routes>
         <Footer />
       </div>
