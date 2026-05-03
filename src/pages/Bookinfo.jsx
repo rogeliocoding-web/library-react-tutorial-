@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState }from "react";
 import { Link, useParams } from "react-router-dom";
 import Rating from "../components/ui/Rating";
 import Price from "../components/ui/Price";
@@ -8,6 +8,14 @@ import Book from "../components/ui/Book";
 const Bookinfo = ({ books, addToCart }) => {
   const { id } = useParams();
   const book = books.find((book) => +book.id === +id);
+
+  function addBookToCart() {
+    addToCart(book);
+  }
+
+  function bookExistsInCart() {
+   return cart.find(book => book.id === +id);
+  }
 
   return (
     <div id="books__body">
@@ -50,7 +58,15 @@ const Bookinfo = ({ books, addToCart }) => {
                     maiores. Non maxime fugiat accusamus molestias?
                   </p>
                 </div>
-                <button className="btn" onClick={() => addToCart(book)}>Add to Cart</button>
+                {bookExistsInCart() ? (
+                    <Link to={`/cart`} className="book__link">
+                        <button className="btn">Checkout</button>
+                    </Link>
+                ) : (
+                        <button className="btn" onClick={addBookToCart}>
+                        Add to Cart
+                        </button>
+                    )}
               </div>
             </div>
           </div>
@@ -60,13 +76,16 @@ const Bookinfo = ({ books, addToCart }) => {
             <div className="book__selected--top">
               <h2 className="books__selected--title">Recommended Books</h2>
             </div>
+            <div className="books">
+            
             {books
               .filter((book) => book.rating === 5 && +book.id !== +id)
               .slice(0, 4)
-
+            
               .map((book) => (
-                <Book book={book} key={book.id} />
-              ))}
+                  <Book book={book} key={book.id} />
+                ))}
+                </div>
           </div>
         </div>
       </main>
@@ -76,3 +95,6 @@ const Bookinfo = ({ books, addToCart }) => {
 
 export default Bookinfo;
 
+
+
+ 
