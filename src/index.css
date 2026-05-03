@@ -259,8 +259,11 @@ header {
 }
 
 .books__container {
-  padding: 24px 0;
+    max-width: 1200px;
+    margin: 0 auto;  /* centers the container horizontally */
+    padding: 0 2rem; /* adds equal breathing room on both sides */
 }
+
 
 .row {
   width: 100%;
