@@ -6,7 +6,7 @@ const Footer = () => {
    <footer>
     <div className="container">
         <div className="row row__column">
-           <Link to href="/">
+           <Link to="/">
               <figure className='Footer__logo'>
                 <img src={Logo} className="footer__logo--img" />
 
